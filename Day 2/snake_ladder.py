@@ -24,8 +24,7 @@ def move(pos):
     
     elif movetype == 1: #Ladder
         print(f"You got Ladder! You move forward {steps} steps.\nStarted From: {pos}")
-        new_pos = pos + steps
-        print(f"Ended at: {pos}")        
+        new_pos = pos + steps       
         return new_pos
     
     else:  # Snake
@@ -34,7 +33,7 @@ def move(pos):
             print(f"You got Snake! You rolled {steps}, but can't go below 0. Restarting at 0.\n")
             return 0
         else:
-            print(f"You got Snake! You move back {steps} steps.\nStarted at: {pos}\nEnded at: {new_pos}")
+            print(f"You got Snake! You move back {steps} steps.\nStarted at: {pos}")
             return new_pos
         
 # UC5: Ensure the player reaches exactly 100 to win
@@ -43,3 +42,7 @@ def check_win_condition(pos):
         print(f"You rolled too high! Staying at {pos - (pos - 100)} until you roll exactly {100 - (pos - (pos - 100))}.\n")
         return pos - (pos - 100)
     return pos
+
+# UC6: Report the number of dice rolls and positions after every roll
+def report_dice_roll(player, rolls):
+    print(f"{player} has rolled {rolls} times. Current Position: {player}\n")
