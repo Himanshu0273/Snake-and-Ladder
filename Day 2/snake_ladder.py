@@ -46,3 +46,37 @@ def check_win_condition(pos):
 # UC6: Report the number of dice rolls and positions after every roll
 def report_dice_roll(player, rolls):
     print(f"{player} has rolled {rolls} times. Current Position: {player}\n")
+    
+
+#UC7: Game is played between 2 players
+
+def play_game():
+    player_A = start()
+    player_B = start()
+    dice_count_A = 0
+    dice_count_B = 0
+
+    while player_A != 100 and player_B != 100:
+        print("Player A MOVES:")
+        player_A = move(player_A)
+        player_A = check_win_condition(player_A)
+        dice_count_A += 1
+        report_dice_roll("Player A", dice_count_A)
+
+        if player_A == 100:
+            print(f"HOORAY!!! Player A WINS in {dice_count_A} dice rolls!")
+            break
+
+        print("Player B MOVES:")
+        player_B = move(player_B)
+        player_B = check_win_condition(player_B)
+        dice_count_B += 1
+        report_dice_roll("Player B", dice_count_B)
+
+        if player_B == 100:
+            print(f"HOORAY!!! Player B WINS in {dice_count_B} dice rolls!")
+            break
+
+# Run the game
+if __name__ == "__main__":
+    play_game()
