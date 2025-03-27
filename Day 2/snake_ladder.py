@@ -21,6 +21,7 @@ def move(pos):
     
     if movetype == 0: #No Play
         print("You got NO PLAY!!Wait for the next turn")
+        return pos
     
     elif movetype == 1: #Ladder
         print(f"You got Ladder! You move forward {steps} steps.\nStarted From: {pos}")
