@@ -36,3 +36,10 @@ def move(pos):
         else:
             print(f"You got Snake! You move back {steps} steps.\nStarted at: {pos}\nEnded at: {new_pos}")
             return new_pos
+        
+# UC5: Ensure the player reaches exactly 100 to win
+def check_win_condition(pos):
+    if pos > 100:
+        print(f"You rolled too high! Staying at {pos - (pos - 100)} until you roll exactly {100 - (pos - (pos - 100))}.\n")
+        return pos - (pos - 100)
+    return pos
