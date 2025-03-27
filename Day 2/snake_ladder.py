@@ -7,3 +7,8 @@ def start():
 # UC 2: Roll the die (1-6)
 def rolldie():
     return randint(1,6)
+
+# UC 3: Determine play type 
+# (0: No Play, 1: Ladder, or 2: Snake)
+def moveToPlay():
+    return randint(0,2)
